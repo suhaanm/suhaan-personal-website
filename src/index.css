@@ -50,10 +50,12 @@
 
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   html {
     scroll-behavior: auto;
+    cursor: none !important;
   }
 
   body {
