@@ -165,11 +165,10 @@ export default function Contact() {
           </TiltCard>
         </div>
         <div className="reveal-item mt-16 md:mt-24 pt-6 md:pt-8 flex flex-wrap items-center justify-between gap-4" style={{ borderTop: '1px solid var(--border-subtle)' }}>
-          <p className="font-mono" style={{ fontSize: '9px', color: 'var(--text-faint)', letterSpacing: '0.1em' }}>© 2025 SUHAAN MOBHANI</p>
+          <p className="font-mono" style={{ fontSize: '9px', color: 'var(--text-faint)', letterSpacing: '0.1em' }}>© 2026 SUHAAN MOBHANI</p>
           <p className="font-mono" style={{ fontSize: '9px', color: 'var(--text-faint)', letterSpacing: '0.05em' }}>Built around AI, mathematics, and learning.</p>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#00BCD4', boxShadow: '0 0 6px rgba(0, 188, 212, 0.4)' }} />
-            <span className="font-mono" style={{ fontSize: '8px', color: 'rgba(0, 188, 212, 0.35)', letterSpacing: '0.1em' }}>NOMINAL</span>
           </div>
         </div>
       </div>
