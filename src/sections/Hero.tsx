@@ -138,11 +138,11 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className="hero-fade text-sm sm:text-base md:text-lg lg:text-xl mb-7 md:mb-9 max-w-2xl mx-auto font-light"
+            className="hero-fade text-xs sm:text-sm md:text-base lg:text-lg mb-7 md:mb-9 max-w-2xl mx-auto font-mono tracking-tight"
             style={{
-              color: 'rgba(26, 26, 46, 0.5)',
-              lineHeight: 1.65,
-              minHeight: '1.65em',
+              color: 'rgba(26, 26, 46, 0.72)',
+              lineHeight: 1.75,
+              minHeight: '1.75em',
             }}
           >
             {typingDone && (
