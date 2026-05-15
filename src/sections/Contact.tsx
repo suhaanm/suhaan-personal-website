@@ -4,6 +4,7 @@ import ScrambleText from '@/components/ScrambleText';
 import MagneticButton from '@/components/MagneticButton';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { toast } from 'sonner';
+import resumePdf from '@/assets/resume.pdf';
 
 function TiltCard({ children, className = '', intensity = 4 }: { children: React.ReactNode; className?: string; intensity?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -110,7 +111,7 @@ export default function Contact() {
             </div>
             <MagneticButton 
               strength={0.2} 
-              href="/resume.pdf" 
+              href={resumePdf} 
               download="Suhaan_Mobhani_Resume.pdf"
               className="inline-block font-mono text-xs tracking-widest uppercase px-5 md:px-6 py-2.5 md:py-3" 
               style={{ border: '1px solid rgba(212, 175, 55, 0.22)', color: '#D4AF37', background: 'transparent' }}
