@@ -74,7 +74,7 @@ export default function Academic() {
             ))}
             <div className="reveal-item flex flex-wrap gap-2 pt-2">
               {['AP Scholar with Distinction', 'AP International Diploma', 'FIRST Robotics'].map((badge) => (
-                <span key={badge} className="font-mono" style={{ fontSize: '8px', letterSpacing: '0.1em', color: 'rgba(212, 175, 55, 0.5)', background: 'rgba(212, 175, 55, 0.05)', padding: '4px 10px', border: '1px solid rgba(212, 175, 55, 0.1)', borderRadius: '4px' }}>{badge}</span>
+                <span key={badge} className="font-mono" style={{ fontSize: '8px', letterSpacing: '0.1em', color: 'rgba(212, 175, 55, 0.85)', background: 'rgba(212, 175, 55, 0.05)', padding: '4px 10px', border: '1px solid rgba(212, 175, 55, 0.15)', borderRadius: '4px' }}>{badge}</span>
               ))}
             </div>
           </div>

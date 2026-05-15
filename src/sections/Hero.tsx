@@ -119,7 +119,7 @@ export default function Hero() {
           </div>
 
           {/* Name Heading */}
-          <h2 className="hero-fade font-mono text-xs tracking-[0.3em] uppercase mb-4 opacity-40" style={{ color: '#111133' }}>
+          <h2 className="hero-fade font-mono text-xs tracking-[0.3em] uppercase mb-4 opacity-70" style={{ color: '#111133' }}>
             Suhaan Mobhani
           </h2>
 
@@ -187,7 +187,7 @@ export default function Hero() {
               className="font-mono text-xs tracking-widest uppercase px-6 md:px-8 py-3 transition-all duration-300"
               style={{
                 border: '1px solid rgba(0, 0, 0, 0.08)',
-                color: 'rgba(26, 26, 46, 0.4)',
+                color: 'rgba(26, 26, 46, 0.65)',
                 borderRadius: '6px',
               }}
               onMouseEnter={(e) => {
@@ -213,7 +213,7 @@ export default function Hero() {
       >
         <span
           className="font-mono"
-          style={{ fontSize: '8px', letterSpacing: '0.25em', color: 'rgba(26, 26, 46, 0.18)' }}
+          style={{ fontSize: '8px', letterSpacing: '0.25em', color: 'rgba(26, 26, 46, 0.45)' }}
         >
           SCROLL
         </span>

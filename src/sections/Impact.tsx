@@ -7,7 +7,7 @@ const impacts = [
   { title: 'Mentored 60 students', description: 'Through a math club for AMC and WMTC preparation, building problem-solving skills in the next generation of mathletes.', color: '#2196F3', icon: '◈' },
   { title: 'STEM volunteering', description: 'Worked with Akanksha Foundation / Mumbai Public School to teach STEM subjects to underserved students.', color: '#00BCD4', icon: '◇' },
   { title: 'Global Encounters Kenya', description: 'Taught AI prompt engineering, AI image upscaling, and digital skills to students in Kenya.', color: '#7C3AED', icon: '◈' },
-  { title: 'Scouts leadership', description: 'Long-term involvement as a Rover and Patrol Leader, building teamwork and outdoor skills.', color: '#7A8B6F', icon: '◇' },
+  { title: 'Scouts leadership', description: 'Long-term involvement as a Rover and Patrol Leader, building teamwork and outdoor skills.', color: '#556B4B', icon: '◇' },
 ];
 
 function TiltRow({ children, className = '', intensity = 2 }: { children: React.ReactNode; className?: string; intensity?: number }) {
@@ -26,7 +26,7 @@ export default function Impact() {
       <div className="absolute inset-0 tech-grid pointer-events-none" />
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="mb-12 md:mb-16">
-          <span className="font-mono-accent block mb-4" style={{ color: '#7A8B6F' }}>// IMPACT</span>
+          <span className="font-mono-accent block mb-4" style={{ color: '#556B4B' }}>// IMPACT</span>
           <ScrambleText text="Impact beyond code" as="h2" className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: 'var(--text-heading)' }} />
           <div className="section-divider mt-6" />
         </div>

@@ -90,11 +90,11 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
           <div className="reveal-item space-y-6 md:space-y-8">
             <div>
-              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>EMAIL</span>
+              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#556B4B', fontSize: '9px' }}>EMAIL</span>
               <a href="mailto:suhaan@mobhani.com" className="font-mono text-sm md:text-lg transition-all duration-300 hover:text-[#00BCD4] block" style={{ color: '#2196F3' }}>suhaan@mobhani.com</a>
             </div>
             <div>
-              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>PROFILES</span>
+              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#556B4B', fontSize: '9px' }}>PROFILES</span>
               <div className="space-y-2">
                 {[{ label: 'LinkedIn', href: 'https://linkedin.com/in/suhaan-mobhani/' }].map((link) => (
                   <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block font-mono text-sm transition-all duration-300 hover:text-[#00BCD4] hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>{link.label} →</a>
@@ -102,7 +102,7 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>PROJECTS</span>
+              <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#556B4B', fontSize: '9px' }}>PROJECTS</span>
               <div className="space-y-2">
                 {['tutix.ai', 'imtcontest.org'].map((link) => (
                   <a key={link} href={`https://${link}`} target="_blank" rel="noopener noreferrer" className="block font-mono text-sm transition-all duration-300 hover:text-[#00BCD4] hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>{link} →</a>
@@ -133,15 +133,15 @@ export default function Contact() {
               />
 
               <div>
-                <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>NAME</label>
+                <label className="font-mono-accent block mb-2" style={{ color: '#556B4B', fontSize: '9px' }}>NAME</label>
                 <input required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="Your name" />
               </div>
               <div>
-                <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>EMAIL</label>
+                <label className="font-mono-accent block mb-2" style={{ color: '#556B4B', fontSize: '9px' }}>EMAIL</label>
                 <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="your@email.com" />
               </div>
               <div>
-                <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>MESSAGE</label>
+                <label className="font-mono-accent block mb-2" style={{ color: '#556B4B', fontSize: '9px' }}>MESSAGE</label>
                 <textarea required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={5} className="w-full px-4 py-3 outline-none resize-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="What's on your mind?" />
               </div>
               

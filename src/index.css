@@ -19,8 +19,8 @@
     --bg-rgb: 240, 242, 245;
     --text: #1A1A2E;
     --text-heading: #111133;
-    --text-muted: rgba(26, 26, 46, 0.55);
-    --text-faint: rgba(26, 26, 46, 0.3);
+    --text-muted: rgba(26, 26, 46, 0.78);
+    --text-faint: rgba(26, 26, 46, 0.55);
     --card-bg: rgba(255, 255, 255, 0.72);
     --card-border: rgba(0, 0, 0, 0.06);
     --card-border-hover: rgba(0, 0, 0, 0.12);

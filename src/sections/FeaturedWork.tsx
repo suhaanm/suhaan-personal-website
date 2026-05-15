@@ -50,7 +50,7 @@ export default function FeaturedWork() {
                   {projects[0].tags.map((tag) => <span key={tag} className="font-mono hidden sm:inline" style={{ fontSize: '9px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>{tag}</span>)}
                 </div>
                 <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl mb-2" style={{ color: 'var(--text-heading)' }}>{projects[0].title}</h3>
-                <p className="font-mono-accent mb-4" style={{ color: '#7A8B6F', fontSize: '9px' }}>{projects[0].subtitle}</p>
+                <p className="font-mono-accent mb-4" style={{ color: '#556B4B', fontSize: '9px' }}>{projects[0].subtitle}</p>
                 <p className="text-sm sm:text-base max-w-lg mb-6" style={{ color: 'var(--text-muted)', lineHeight: 1.65 }}>{projects[0].description}</p>
                 <MagneticButton strength={0.2} className="inline-flex items-center gap-2 font-mono text-sm" style={{ color: '#2196F3', background: 'transparent', border: 'none' }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#2196F3' }} />tutix.ai →
