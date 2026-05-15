@@ -35,7 +35,7 @@ export default function Contact() {
     try {
       // 3. Web3Forms Integration (Secure, No Backend)
       // Get your free access key at https://web3forms.com
-      const accessKey = 'YOUR_ACCESS_KEY_HERE'; // User needs to replace this
+      const accessKey = '0ab2bb63-5003-4046-a0f5-226bb630170c'; // User provided key
       
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
