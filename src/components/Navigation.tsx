@@ -51,7 +51,7 @@ export default function Navigation() {
           onClick={(e) => { e.preventDefault(); const lenis = getLenis(); if (lenis) lenis.scrollTo(0); }}
         >
           <span className="font-mono text-sm tracking-widest uppercase" style={{ color: logoColor }}>
-            SM
+            Suhaan Mobhani
           </span>
           <span
             className="hidden md:inline-block w-px h-4"

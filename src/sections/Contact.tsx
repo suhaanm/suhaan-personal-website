@@ -15,7 +15,7 @@ export default function Contact() {
   const sectionRef = useScrollAnimation<HTMLElement>({ type: 'fade-up', childSelector: '.reveal-item', stagger: 0.12, start: 'top 80%' });
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); alert('Please email directly at suhaan.mobhani25@imperial.ac.uk'); };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); alert('Please email directly at suhaan@mobhani.com'); };
 
   const inputStyle: React.CSSProperties = {
     background: 'var(--input-bg)',
@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="reveal-item space-y-6 md:space-y-8">
             <div>
               <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>EMAIL</span>
-              <a href="mailto:suhaan.mobhani25@imperial.ac.uk" className="font-mono text-sm md:text-lg transition-all duration-300 hover:text-[#00BCD4] block" style={{ color: '#2196F3' }}>suhaan.mobhani25@imperial.ac.uk</a>
+              <a href="mailto:suhaan@mobhani.com" className="font-mono text-sm md:text-lg transition-all duration-300 hover:text-[#00BCD4] block" style={{ color: '#2196F3' }}>suhaan@mobhani.com</a>
             </div>
             <div>
               <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>PROFILES</span>

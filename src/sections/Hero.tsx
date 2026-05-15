@@ -118,6 +118,11 @@ export default function Hero() {
             </span>
           </div>
 
+          {/* Name Heading */}
+          <h2 className="hero-fade font-mono text-xs tracking-[0.3em] uppercase mb-4 opacity-40" style={{ color: '#111133' }}>
+            Suhaan Mobhani
+          </h2>
+
           {/* Main headline */}
           <h1
             className="hero-fade font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-5 max-w-4xl mx-auto"
