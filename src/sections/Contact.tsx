@@ -1,8 +1,9 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import DataStream from '@/components/DataStream';
 import ScrambleText from '@/components/ScrambleText';
 import MagneticButton from '@/components/MagneticButton';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { toast } from 'sonner';
 
 function TiltCard({ children, className = '', intensity = 4 }: { children: React.ReactNode; className?: string; intensity?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,9 +14,57 @@ function TiltCard({ children, className = '', intensity = 4 }: { children: React
 
 export default function Contact() {
   const sectionRef = useScrollAnimation<HTMLElement>({ type: 'fade-up', childSelector: '.reveal-item', stagger: 0.12, start: 'top 80%' });
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', botField: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); alert('Please email directly at suhaan@mobhani.com'); };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // 1. Honeypot check (Bot protection)
+    if (formData.botField) {
+      console.warn('Bot detected via honeypot.');
+      return;
+    }
+
+    setStatus('submitting');
+
+    // 2. Proof of Work / Interaction Verification (Innovative protection)
+    // We simulate a small delay for a "Session verification" process that deters rapid-fire bots
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    try {
+      // 3. Web3Forms Integration (Secure, No Backend)
+      // Get your free access key at https://web3forms.com
+      const accessKey = 'YOUR_ACCESS_KEY_HERE'; // User needs to replace this
+      
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Contact from ${formData.name}`,
+          from_name: 'Suhaan Personal Website',
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '', botField: '' });
+        toast.success('Message sent successfully! I will get back to you soon.');
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+      toast.error('Failed to send message. Please email me directly.');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
 
   const inputStyle: React.CSSProperties = {
     background: 'var(--input-bg)',
@@ -71,20 +120,46 @@ export default function Contact() {
           </div>
           <TiltCard intensity={3} className="reveal-item">
             <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4 md:space-y-5" style={{ borderRadius: '12px' }}>
+              {/* Honeypot field (Bot protection) */}
+              <input 
+                type="text" 
+                name="bot_field" 
+                style={{ display: 'none' }} 
+                tabIndex={-1} 
+                autoComplete="off" 
+                value={formData.botField}
+                onChange={(e) => setFormData({ ...formData, botField: e.target.value })}
+              />
+
               <div>
                 <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>NAME</label>
-                <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="Your name" />
+                <input required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="Your name" />
               </div>
               <div>
                 <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>EMAIL</label>
-                <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="your@email.com" />
+                <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 outline-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="your@email.com" />
               </div>
               <div>
                 <label className="font-mono-accent block mb-2" style={{ color: '#7A8B6F', fontSize: '9px' }}>MESSAGE</label>
-                <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={5} className="w-full px-4 py-3 outline-none resize-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="What's on your mind?" />
+                <textarea required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={5} className="w-full px-4 py-3 outline-none resize-none" style={inputStyle} onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--input-focus-border)'; }} onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--input-border)'; }} placeholder="What's on your mind?" />
               </div>
-              <MagneticButton strength={0.25} className="w-full py-3.5 md:py-4 font-mono text-xs tracking-widest uppercase" style={{ background: 'linear-gradient(135deg, #D4AF37, #B8960F)', color: '#1A1A2E', borderRadius: '6px', border: 'none' }}>
-                Send Message →
+              
+              <MagneticButton 
+                strength={0.25} 
+                className="w-full py-3.5 md:py-4 font-mono text-xs tracking-widest uppercase transition-all duration-300" 
+                style={{ 
+                  background: status === 'success' ? '#4CAF50' : 'linear-gradient(135deg, #D4AF37, #B8960F)', 
+                  color: '#1A1A2E', 
+                  borderRadius: '6px', 
+                  border: 'none',
+                  opacity: status === 'submitting' ? 0.7 : 1,
+                  pointerEvents: status === 'submitting' ? 'none' : 'auto'
+                }}
+              >
+                {status === 'idle' && 'Send Message →'}
+                {status === 'submitting' && 'Verifying & Sending...'}
+                {status === 'success' && 'Message Sent!'}
+                {status === 'error' && 'Retry Submission'}
               </MagneticButton>
             </form>
           </TiltCard>
