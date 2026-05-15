@@ -46,7 +46,7 @@ export default function Contact() {
             <div>
               <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>PROFILES</span>
               <div className="space-y-2">
-                {[{ label: 'LinkedIn', href: 'https://linkedin.com/in/suhaan-mobhani/' }, { label: 'GitHub', href: 'https://github.com/suhaanmobhani' }].map((link) => (
+                {[{ label: 'LinkedIn', href: 'https://linkedin.com/in/suhaan-mobhani/' }].map((link) => (
                   <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block font-mono text-sm transition-all duration-300 hover:text-[#00BCD4] hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>{link.label} →</a>
                 ))}
               </div>
@@ -54,7 +54,7 @@ export default function Contact() {
             <div>
               <span className="font-mono-accent block mb-2 md:mb-3" style={{ color: '#7A8B6F', fontSize: '9px' }}>PROJECTS</span>
               <div className="space-y-2">
-                {['tutix.ai', 'imtcontest.org', 'thecalt.com'].map((link) => (
+                {['tutix.ai', 'imtcontest.org'].map((link) => (
                   <a key={link} href={`https://${link}`} target="_blank" rel="noopener noreferrer" className="block font-mono text-sm transition-all duration-300 hover:text-[#00BCD4] hover:translate-x-1" style={{ color: 'var(--text-muted)' }}>{link} →</a>
                 ))}
               </div>
