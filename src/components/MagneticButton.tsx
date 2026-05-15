@@ -6,10 +6,24 @@ interface MagneticButtonProps {
   style?: React.CSSProperties;
   strength?: number;
   onClick?: () => void;
+  href?: string;
+  download?: string | boolean;
+  target?: string;
+  rel?: string;
 }
 
-export default function MagneticButton({ children, className = '', style, strength = 0.3, onClick }: MagneticButtonProps) {
-  const ref = useRef<HTMLButtonElement>(null);
+export default function MagneticButton({
+  children,
+  className = '',
+  style,
+  strength = 0.3,
+  onClick,
+  href,
+  download,
+  target,
+  rel,
+}: MagneticButtonProps) {
+  const ref = useRef<any>(null);
 
   const onMouseMove = useCallback((e: React.MouseEvent) => {
     if (!ref.current) return;
@@ -24,15 +38,25 @@ export default function MagneticButton({ children, className = '', style, streng
     ref.current.style.transform = 'translate(0, 0)';
   }, []);
 
+  const commonProps = {
+    ref,
+    className,
+    style: { ...style, transition: 'transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)' },
+    onMouseMove,
+    onMouseLeave,
+    onClick,
+  };
+
+  if (href) {
+    return (
+      <a {...commonProps} href={href} download={download} target={target} rel={rel}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <button
-      ref={ref}
-      className={className}
-      style={{ ...style, transition: 'transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)' }}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
-      onClick={onClick}
-    >
+    <button {...commonProps}>
       {children}
     </button>
   );

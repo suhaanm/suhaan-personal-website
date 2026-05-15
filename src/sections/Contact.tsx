@@ -59,7 +59,13 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-            <MagneticButton strength={0.2} className="inline-block font-mono text-xs tracking-widest uppercase px-5 md:px-6 py-2.5 md:py-3" style={{ border: '1px solid rgba(212, 175, 55, 0.22)', color: '#D4AF37', background: 'transparent' }}>
+            <MagneticButton 
+              strength={0.2} 
+              href="/resume.pdf" 
+              download="Suhaan_Mobhani_Resume.pdf"
+              className="inline-block font-mono text-xs tracking-widest uppercase px-5 md:px-6 py-2.5 md:py-3" 
+              style={{ border: '1px solid rgba(212, 175, 55, 0.22)', color: '#D4AF37', background: 'transparent' }}
+            >
               Download Resume ↓
             </MagneticButton>
           </div>
