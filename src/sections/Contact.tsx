@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import DataStream from '@/components/DataStream';
 import ScrambleText from '@/components/ScrambleText';
 import MagneticButton from '@/components/MagneticButton';
